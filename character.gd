@@ -7,11 +7,11 @@ const JUMP_VELOCITY = 3.0
 @onready var camera_3d = $head/Camera3D
 var sensetivity = 0.003
 var t_bob = 0.0
-var bob_freq = 1.5
-var bob_amp = 0.08
+var bob_freq = 3
+var bob_amp = 0.1
 
-const walk_speed = 3.0
-const sprint_speed = 7.0
+const walk_speed = 2.0
+const sprint_speed = 3.0
 var speed = 0
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")

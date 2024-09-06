@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8rnosfuo00rr"]
+[gd_scene load_steps=4 format=3 uid="uid://c8rnosfuo00rr"]
 
-[ext_resource type="Texture2D" uid="uid://bkj0jcmthyxxs" path="res://assets/dirt.JPG" id="1_rpl2s"]
+[ext_resource type="PackedScene" uid="uid://csn2tyxj5vsgt" path="res://map.tscn" id="1_dupyt"]
 [ext_resource type="PackedScene" uid="uid://86edlj0cxajg" path="res://scenes/character.tscn" id="1_sndx5"]
 
 [sub_resource type="Environment" id="Environment_k73yt"]
@@ -12,26 +12,13 @@ volumetric_fog_density = 0.0711
 volumetric_fog_albedo = Color(0, 0, 0, 1)
 volumetric_fog_emission = Color(0.45051, 0.454497, 0.465423, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dhy7"]
-albedo_texture = ExtResource("1_rpl2s")
-uv1_triplanar = true
-
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.763308, -1.13718, -0.477658)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k73yt")
 
-[node name="map" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259581, 0.00220108, 5.66468)
-rotation_order = 0
-
-[node name="CSGBox3D" type="CSGBox3D" parent="map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13931, -2.22366, 3.30824)
-material_override = SubResource("StandardMaterial3D_6dhy7")
-custom_aabb = AABB(22, 0, 0, 0, 0, 0)
-use_collision = true
-size = Vector3(100, 0.01, 100)
+[node name="map" parent="." instance=ExtResource("1_dupyt")]
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_sndx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33633, -1.26127, 5.39595)
+transform = Transform3D(0.4, 0, 0, 0, 0.386, 0, 0, 0, 0.398, -23.6963, 1.47246, -4.15776)

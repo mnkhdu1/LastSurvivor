@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vvwj4"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0155709, -0.0430239, 0.0182762)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0155709, -0.0430239, 0.0182762)
 script = ExtResource("1_omyan")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
