@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8rnosfuo00rr"]
+[gd_scene load_steps=5 format=3 uid="uid://c8rnosfuo00rr"]
 
 [ext_resource type="Texture2D" uid="uid://bkj0jcmthyxxs" path="res://assets/dirt.JPG" id="1_rpl2s"]
 [ext_resource type="PackedScene" uid="uid://86edlj0cxajg" path="res://scenes/character.tscn" id="1_sndx5"]
-[ext_resource type="PackedScene" uid="uid://defv1vomchpgm" path="res://scenes/stonewall.tscn" id="3_wmw17"]
 
 [sub_resource type="Environment" id="Environment_k73yt"]
 ambient_light_energy = 7.4
@@ -36,20 +35,3 @@ size = Vector3(100, 0.01, 100)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_sndx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33633, -1.26127, 5.39595)
-
-[node name="stone walls" type="Node3D" parent="."]
-
-[node name="stonewall" parent="." instance=ExtResource("3_wmw17")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.479, -2.21646, 8.80773)
-
-[node name="stonewall2" parent="." instance=ExtResource("3_wmw17")]
-transform = Transform3D(-1.5, -2.29282e-14, -1.31134e-07, 0, 1.5, -2.62268e-07, 1.31134e-07, -2.62268e-07, -1.5, 4.23672, -2.21646, 8.80409)
-
-[node name="stonewall3" parent="." instance=ExtResource("3_wmw17")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 7.69407, -2.20916, 7.63075)
-
-[node name="stonewall4" parent="." instance=ExtResource("3_wmw17")]
-transform = Transform3D(1.78873e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, 1.78873e-08, 7.69407, -2.20916, 5.39246)
-
-[node name="stonewall5" parent="." instance=ExtResource("3_wmw17")]
-transform = Transform3D(1.78873e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, 1.78873e-08, 7.69407, -2.20916, 3.13891)
