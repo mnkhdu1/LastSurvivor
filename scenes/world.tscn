@@ -7,6 +7,7 @@
 ambient_light_energy = 7.4
 glow_enabled = true
 fog_enabled = true
+fog_light_color = Color(0.595178, 0.628667, 0.681288, 1)
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0711
 volumetric_fog_albedo = Color(0, 0, 0, 1)
