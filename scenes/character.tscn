@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://86edlj0cxajg"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_omyan"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ampoy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vvwj4"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0155709, -0.0430239, 0.0182762)
+script = ExtResource("1_omyan")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00424743, 0.00575495, -0.00590277)
+mesh = SubResource("CapsuleMesh_ampoy")
+
+[node name="head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48572, 0)
+fov = 64.3658
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vvwj4")

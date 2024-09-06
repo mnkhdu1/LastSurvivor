@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="LastSurvivor.v2"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [input]
 
