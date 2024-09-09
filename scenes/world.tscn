@@ -20,6 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.763308, -1.13718, -0.477658
 environment = SubResource("Environment_k73yt")
 
 [node name="map" parent="." instance=ExtResource("1_dupyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259581, 0.00220108, 5.66468)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_sndx5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.386, 0, 0, 0, 0.398, -23.6963, 1.47246, -4.15776)
+[node name="CharacterBody3D" parent="map" instance=ExtResource("1_sndx5")]
+transform = Transform3D(0.4, 0, 0, 0, 0.386, 0, 0, 0, 0.398, -23.9559, 1.47026, -9.82244)

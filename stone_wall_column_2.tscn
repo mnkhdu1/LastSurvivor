@@ -43,6 +43,8 @@ shadow_mesh = SubResource("ArrayMesh_hk33w")
 size = Vector3(1, 0.81543, 0.0825195)
 
 [node name="stone-wall-column2" type="StaticBody3D"]
+collision_layer = 8
+collision_mask = 8
 
 [node name="stone-wall-column" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_fsu2i")

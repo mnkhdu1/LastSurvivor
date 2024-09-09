@@ -48,6 +48,8 @@ size = Vector3(0.137207, 0.632111, 0.664063)
 size = Vector3(0.108948, 0.640625, 0.919434)
 
 [node name="stone-wall-curve2" type="StaticBody3D"]
+collision_layer = 8
+collision_mask = 8
 
 [node name="stone-wall-curve" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_lnbyg")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LastSurvivor.v2"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://assets/8787878.glb"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
