@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gtq5g1jyhjfn"
-path.s3tc="res://.godot/imported/Zombie_ColorPalette.jpg-7a2a38c116f3e24d07f0d4afa87591f4.s3tc.ctex"
+uid="uid://cikdd743mnjpt"
+path.s3tc="res://.godot/imported/zombie_enemy_mremireh_shoe_diffuse.png-f6667aa3283237cf69a33ac09b52d443.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ab8e6062069d7bf334cb0b55ef8399b4"
+"md5": "ffe42dd8af13e5b9f31471d5f4354e85"
 }
 
 [deps]
 
-source_file="res://assets/Zombie_ColorPalette.jpg"
-dest_files=["res://.godot/imported/Zombie_ColorPalette.jpg-7a2a38c116f3e24d07f0d4afa87591f4.s3tc.ctex"]
+source_file="res://assets/zombie_enemy_mremireh_shoe_diffuse.png"
+dest_files=["res://.godot/imported/zombie_enemy_mremireh_shoe_diffuse.png-f6667aa3283237cf69a33ac09b52d443.s3tc.ctex"]
 
 [params]
 

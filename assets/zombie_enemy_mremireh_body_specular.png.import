@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c314a1ex80840"
-path.s3tc="res://.godot/imported/8787878_Zombie_Atlas.png-d0d6e203e5ad3fd402d94a967cadee64.s3tc.ctex"
+uid="uid://bkdl3yjc7g7k6"
+path="res://.godot/imported/zombie_enemy_mremireh_body_specular.png-521240312171efef3b673dda2ad2449a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "ae8ba728fcf7e919305cebabeacf184e"
+"md5": "fae186fb6ade33cf58ee4a6835f12aa2"
 }
 
 [deps]
 
-source_file="res://assets/8787878_Zombie_Atlas.png"
-dest_files=["res://.godot/imported/8787878_Zombie_Atlas.png-d0d6e203e5ad3fd402d94a967cadee64.s3tc.ctex"]
+source_file="res://assets/zombie_enemy_mremireh_body_specular.png"
+dest_files=["res://.godot/imported/zombie_enemy_mremireh_body_specular.png-521240312171efef3b673dda2ad2449a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -35,4 +34,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

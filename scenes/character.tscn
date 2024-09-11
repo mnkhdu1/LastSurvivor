@@ -8,6 +8,8 @@
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0155709, -0.0430239, 0.0182762)
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_omyan")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
