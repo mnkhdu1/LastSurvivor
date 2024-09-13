@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://5y3a2w5k1leu"]
+[gd_scene load_steps=9 format=3 uid="uid://cd2ahfk2hkj8q"]
 
 [ext_resource type="Texture2D" uid="uid://dc5qifrl85eji" path="res://assets/GLB format/Textures/colormap.png" id="1_bv35j"]
 [ext_resource type="PackedScene" uid="uid://cy835dycwq2va" path="res://assets/GLB format/crypt-large-roof.glb" id="2_8vuy0"]
@@ -47,6 +47,7 @@ shadow_mesh = SubResource("ArrayMesh_jdfas")
 size = Vector3(1.07379, 1.05133, 2.27633)
 
 [node name="crypt-large2" type="StaticBody3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="crypt-large" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_evhb3")

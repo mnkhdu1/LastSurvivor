@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c15yn321sang4"]
+[gd_scene load_steps=5 format=3 uid="uid://c15yn321sang4"]
 
 [ext_resource type="Texture2D" uid="uid://dc5qifrl85eji" path="res://assets/GLB format/Textures/colormap.png" id="1_woru4"]
 
@@ -41,14 +41,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ib1fp")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_64ms7"]
-points = PackedVector3Array(0.610646, 0.46919, 0.0234751, -0.521484, 0.307469, -0.170364, 0.0605733, 2.02175, -0.0409985, -0.295129, 0.339692, 0.541249, 0.351837, 0.372117, -0.526275, 0.351837, 0.372117, 0.508751, 0.222256, -0.0161746, 0.0558686, -0.295129, 0.404542, -0.526275, -0.327465, 1.43951, 0.0558686, -0.133329, -0.0161746, -0.202757, 0.0605733, 1.98932, 0.0558686, -0.586275, 0.307469, 0.0558686, -0.133329, -0.0161746, 0.185234, -0.230338, 1.40689, -0.235046, 0.610646, 0.404542, -0.0732875, -0.230338, 1.43951, 0.217627, 0.319383, 0.404542, 0.541249, 0.157583, -0.0161746, -0.170364, -0.327465, 1.43951, -0.0409985, 0.319383, 0.436765, -0.526275, 0.545856, 0.436765, 0.185234, 0.125246, -0.0161746, 0.185234, -0.586275, 0.372117, -0.0409985, -0.230338, -0.0161746, -0.0409985, -0.327465, 0.372117, 0.508751, -0.327465, 0.339692, -0.493881, 0.351837, 0.436765, 0.508751, 0.481183, 0.436765, -0.299729, 0.0605733, 2.05417, 0.0234751, 0.610646, 0.404542, 0.0558686, -0.00398258, 0.404542, 0.541249, -0.392138, 0.372117, -0.396805)
-
 [node name="pine-crooked2" type="StaticBody3D"]
 
 [node name="pine-crooked" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_gnecr")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_64ms7")
