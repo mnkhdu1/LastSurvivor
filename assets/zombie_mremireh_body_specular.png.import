@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkdl3yjc7g7k6"
-path="res://.godot/imported/zombie_enemy_mremireh_body_specular.png-521240312171efef3b673dda2ad2449a.ctex"
+uid="uid://dxs66omhoc30s"
+path="res://.godot/imported/zombie_mremireh_body_specular.png-97a8bb1bc88b7f63723747340849cf11.ctex"
 metadata={
 "vram_texture": false
 }
@@ -13,8 +13,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/zombie_enemy_mremireh_body_specular.png"
-dest_files=["res://.godot/imported/zombie_enemy_mremireh_body_specular.png-521240312171efef3b673dda2ad2449a.ctex"]
+source_file="res://assets/zombie_mremireh_body_specular.png"
+dest_files=["res://.godot/imported/zombie_mremireh_body_specular.png-97a8bb1bc88b7f63723747340849cf11.ctex"]
 
 [params]
 

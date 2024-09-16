@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://je0it2116ch1"
-path="res://.godot/imported/zombie_enemy_mremireh_shoe_specular.png-bbee6d7c2ba73e12db6e16ef6d1f30aa.ctex"
+uid="uid://bgxli6jsod1fd"
+path.s3tc="res://.godot/imported/zombie_mremireh_body__diffuse.png-1ba47264c1d2e85a01ae22d5f518c3b2.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "6040a7353405772ab9833bcc3e5d5a70"
+"md5": "6cbf9d2088f8099044ae3a7a862463b2"
 }
 
 [deps]
 
-source_file="res://assets/zombie_enemy_mremireh_shoe_specular.png"
-dest_files=["res://.godot/imported/zombie_enemy_mremireh_shoe_specular.png-bbee6d7c2ba73e12db6e16ef6d1f30aa.ctex"]
+source_file="res://assets/zombie_mremireh_body__diffuse.png"
+dest_files=["res://.godot/imported/zombie_mremireh_body__diffuse.png-1ba47264c1d2e85a01ae22d5f518c3b2.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -34,4 +35,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

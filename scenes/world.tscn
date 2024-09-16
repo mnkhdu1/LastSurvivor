@@ -41,5 +41,5 @@ environment = SubResource("Environment_k73yt")
 
 [node name="map" parent="." instance=ExtResource("1_dupyt")]
 
-[node name="CharacterBody3D" parent="map" instance=ExtResource("1_sndx5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.386, 0, 0, 0, 0.398, -12.4788, 19.6335, 25.154)
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_sndx5")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -26.1613, -18.7552, 6.21428)

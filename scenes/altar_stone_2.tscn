@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://10pvktxcjgno"]
 
-[ext_resource type="Texture2D" uid="uid://dc5qifrl85eji" path="res://assets/GLB format/Textures/colormap.png" id="1_t6hlk"]
+[ext_resource type="Texture2D" uid="uid://dc5qifrl85eji" path="res://assets/GLB format/Textures/colormap.png" id="1_2ct4m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2vv8"]
 resource_name = "colormap"
 cull_mode = 2
-albedo_texture = ExtResource("1_t6hlk")
+albedo_texture = ExtResource("1_2ct4m")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_o3jjg"]
 _surfaces = [{

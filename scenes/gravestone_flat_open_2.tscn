@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c824g6a50o6c6"]
+[gd_scene load_steps=9 format=3 uid="uid://c824g6a50o6c6"]
 
 [ext_resource type="Texture2D" uid="uid://dc5qifrl85eji" path="res://assets/GLB format/Textures/colormap.png" id="1_bsvqk"]
 
@@ -73,8 +73,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ga41o")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_keopf"]
-points = PackedVector3Array(-0.228654, 0.0839223, -0.536275, 0.229007, 0.0829642, 0.54855, 0.223987, 0, 0.536652, 0.229007, 0.0829642, -0.54855, -0.213, 0.252147, 0.488614, 0.211096, 0.2539, -0.495393, -0.228813, 0, 0.536652, -0.228813, 0, -0.536652, 0.211096, 0.2539, 0.495393, -0.213, 0.252147, -0.488614, 0.223987, 0, -0.536652, -0.228654, 0.0839223, 0.536275, -0.215841, 0.151353, -0.529334, -0.215841, 0.151353, 0.529334)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iysfv"]
+points = PackedVector3Array(0.236, 0.0639804, 0.566, 0.212945, 0.253933, 0.516802, -0.236, 0.0639804, 0.566, 0.236, 0, 0.566, 0.236, 0.0639804, -0.566, -0.213038, 0.253933, 0.516802, 0.212945, 0.253933, -0.516913, -0.236, 0, 0.566, -0.236, 0.0639804, -0.566, 0.236, 0, -0.566, -0.213038, 0.253933, -0.516913, -0.236, 0, -0.566)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4uhsx"]
+size = Vector3(0.40332, 0.122505, 1.0351)
 
 [node name="gravestone-flat-open2" type="StaticBody3D"]
 
@@ -89,4 +92,9 @@ mesh = SubResource("ArrayMesh_f7ymx")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_keopf")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00410128, -0.0138166, 0.00750732)
+shape = SubResource("ConvexPolygonShape3D_iysfv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0180664, 0.29708, 0.00576782)
+shape = SubResource("BoxShape3D_4uhsx")

@@ -62,5 +62,5 @@ func head_bob(time):
 	var pos = Vector3.ZERO
 	pos.y = sin(time * bob_freq)* bob_amp
 	pos.x = cos(time * bob_freq/2)* bob_amp
-	print(pos)
+	
 	return pos
