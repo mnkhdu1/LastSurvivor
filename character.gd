@@ -19,6 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 # remove cursor
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 # rotate camera
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -28,7 +29,7 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	
-
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -54,7 +55,9 @@ func _physics_process(delta):
 		
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera_3d.transform.origin = head_bob(t_bob)
-	
+	if Input.is_action_just_pressed("shoot"):
+		$head/Camera3D/sawed_off_without_shell/AnimationPlayer.play("shoot")
+		
 
 	move_and_slide()
 	
