@@ -4854,7 +4854,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8218, 1.46322, -6.08938)
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1393, 1.45822, 5.30824)
 material_override = SubResource("StandardMaterial3D_6dhy7")
-custom_aabb = AABB(22, 0, 0, 0, 0, 0)
 use_collision = true
 collision_layer = 32
 collision_mask = 32
