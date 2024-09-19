@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhq7ytfwhby44"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qrmum"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibwih"]
+albedo_color = Color(0.622606, 0.0544809, 0, 1)
+metallic = 0.18
+metallic_specular = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 0.74
+
+[node name="shell" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
+mesh = SubResource("CylinderMesh_qrmum")
+surface_material_override/0 = SubResource("StandardMaterial3D_ibwih")

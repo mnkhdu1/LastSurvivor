@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://86edlj0cxajg"]
+[gd_scene load_steps=12 format=3 uid="uid://86edlj0cxajg"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_omyan"]
 [ext_resource type="PackedScene" uid="uid://c1ocfr4hwco1c" path="res://assets/sawed_off_without_shell.glb" id="2_dls63"]
+[ext_resource type="AudioStream" uid="uid://bfomuihqq5oor" path="res://assets/ogg sound effect/shotgun.ogg" id="3_fn6mh"]
+[ext_resource type="PackedScene" uid="uid://dhq7ytfwhby44" path="res://shell.tscn" id="3_tpyv1"]
+[ext_resource type="AudioStream" uid="uid://dqqp0ownpbuqk" path="res://shotgun-fast-reload.ogg" id="5_4n5i7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ampoy"]
 
@@ -19,10 +22,93 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0.392615, -0.626727, -1.03672)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.65653, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/shell:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/shell2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/shell:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.39577, -0.847245, -2.38843)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/shell:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.900907, -0.48582, -0.791344)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/shell2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.909649, -1.041, -2.41955)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/shell2:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.201083, 0.508437, 1.22667)]
+}
 
-[sub_resource type="Animation" id="Animation_fqojs"]
-resource_name = "shoot"
-length = 0.5
+[sub_resource type="Animation" id="Animation_ma5ni"]
+resource_name = "reload"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,15 +116,129 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.393, -0.627, -1.037), Vector3(0.393, -0.627, -0.860658), Vector3(0.393, -0.745421, -0.860658), Vector3(0.393, -0.816378, -0.802855), Vector3(0.393, -0.376877, -0.147787), Vector3(0.393, 0.0399545, -0.30922), Vector3(0.393, -0.468704, -0.615439), Vector3(0.393, -0.511212, -0.615439), Vector3(0.393, -0.627, -1.037)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.64934, 0), Vector3(0.0436945, 1.63608, -0.589018), Vector3(0.0588171, 1.62287, -0.845354), Vector3(0.047242, 1.50803, -2.4972), Vector3(-0.0586023, 1.51848, 2.30036), Vector3(-0.0457088, 1.63469, 0.62019), Vector3(-0.0248811, 1.6453, 0.321731), Vector3(0, 1.64934, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/shell:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/shell2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/shell:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.6, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.39577, -1.14849, -2.38843), Vector3(1.39577, -1.30611, -2.38843), Vector3(1.51626, -1.46206, -2.38843), Vector3(1.72865, -1.82083, -2.38843)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/shell:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.900907, -0.48582, -0.791345), Vector3(0.472311, -1.03219, -1.7423), Vector3(0.472311, -1.03219, -1.7423), Vector3(0.472311, -1.03219, -1.7423)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/shell2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.7, 0.9, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.392615, -0.626727, -1.03672), Vector3(0.392615, -0.626727, -1.03672), Vector3(0.392615, -0.626727, -0.820551)]
+"values": [Vector3(0.909649, -1.041, -2.41955), Vector3(0.554843, -1.26402, -2.41955), Vector3(0.420348, -2.13859, -2.41955)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/shell2:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.7, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.201083, 0.508437, 1.22667), Vector3(0.201083, 0.508437, 1.22667), Vector3(0.201083, 0.508437, 1.22667)]
+}
+
+[sub_resource type="Animation" id="Animation_fqojs"]
+resource_name = "shoot"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.392615, -0.626727, -1.03672), Vector3(0.392615, -0.626727, -0.795314), Vector3(0.393, -0.627, -1.037)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.65653, 0), Vector3(-0.0355213, 1.64884, 0.426289), Vector3(0, 1.64934, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l35d2"]
 _data = {
 "RESET": SubResource("Animation_1252f"),
+"reload": SubResource("Animation_ma5ni"),
 "shoot": SubResource("Animation_fqojs")
 }
 
@@ -61,12 +261,30 @@ transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -0.391727, -0.592321
 fov = 64.3658
 
 [node name="sawed_off_without_shell" parent="head/Camera3D" instance=ExtResource("2_dls63")]
-transform = Transform3D(0.0989666, 0, 0.591782, 0, 0.6, 0, -0.591782, 0, 0.0989666, 0.392615, -0.626727, -1.03672)
+transform = Transform3D(-0.0513772, 0, 0.597797, 0, 0.6, 0, -0.597796, 0, -0.0513773, 0.392615, -0.626727, -1.03672)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="head/Camera3D/sawed_off_without_shell"]
 libraries = {
 "": SubResource("AnimationLibrary_l35d2")
 }
 
+[node name="shell2" parent="head/Camera3D/sawed_off_without_shell/AnimationPlayer" instance=ExtResource("3_tpyv1")]
+transform = Transform3D(0.154492, -0.315796, 0.190802, 0.368961, 0.13223, -0.0798924, -3.57628e-07, 0.206852, 0.342363, 0.909649, -1.041, -2.41955)
+visible = false
+
+[node name="shell" parent="head/Camera3D/sawed_off_without_shell/AnimationPlayer" instance=ExtResource("3_tpyv1")]
+transform = Transform3D(0.352765, 0.148688, -0.115968, -0.176658, 0.17457, -0.313556, -0.0659443, 0.327746, 0.219623, 1.39577, -0.847245, -2.38843)
+visible = false
+
+[node name="RayCast3D" type="RayCast3D" parent="head/Camera3D/sawed_off_without_shell"]
+transform = Transform3D(0.00597661, -0.0108225, 0.999925, -0.99897, 0.0449256, 0.00645714, -0.0449921, -0.998933, -0.010543, 0.42814, 0.619167, -0.00180918)
+target_position = Vector3(0, 0, -2)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_vvwj4")
+
+[node name="sfx_shot" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_fn6mh")
+
+[node name="sfx_reload" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_4n5i7")

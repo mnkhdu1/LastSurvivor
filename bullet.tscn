@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://rvdkxapx0ld0"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_c2owd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rfa4d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikpcn"]
+albedo_color = Color(1, 1, 1, 0.952941)
+metallic = 1.0
+metallic_texture_channel = 4
+emission_enabled = true
+emission = Color(0.639648, 0.689108, 0, 1)
+emission_energy_multiplier = 16.0
+
+[node name="bullet" type="Node3D"]
+script = ExtResource("1_c2owd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.0115546, 0, 0)
+mesh = SubResource("SphereMesh_rfa4d")
+surface_material_override/0 = SubResource("StandardMaterial3D_ikpcn")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.0115546, 0, 0.0525677)
+target_position = Vector3(0, 0, -2)
