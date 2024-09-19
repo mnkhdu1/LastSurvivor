@@ -11,6 +11,7 @@ metallic_texture_channel = 4
 emission_enabled = true
 emission = Color(0.639648, 0.689108, 0, 1)
 emission_energy_multiplier = 16.0
+distance_fade_mode = 3
 
 [node name="bullet" type="Node3D"]
 script = ExtResource("1_c2owd")

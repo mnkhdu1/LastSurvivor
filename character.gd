@@ -3,7 +3,7 @@ extends CharacterBody3D
 var bullet = load("res://bullet.tscn")
 var shell_scene = load("res://shell.tscn")  # Load the shell scene
 var instance
-var bullet_count: int = 2  # Starting bullets in the magazine
+var bullet_count: int = 2 # Starting bullets in the magazine
 var is_reloading: bool = false  # Track if the player is reloading
 
 const JUMP_VELOCITY = 3.0
@@ -25,7 +25,7 @@ var speed = 0
 var damage = 20
 var spread = 10  # Degrees
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var shoot_delay = 0.4  # Time in seconds between shots
+var shoot_delay = 0.4 # Time in seconds between shots
 var time_since_last_shot = 0.0  # Timer for managing shooting delay
 
 # Remove cursor
@@ -107,7 +107,7 @@ func shoot():
 			# Add the bullet to the scene
 			get_parent().add_child(instance)
 		
-		bullet_count -= 1  # Decrease bullet count after shooting
+		bullet_count -= 1 # Decrease bullet count after shooting
 		time_since_last_shot = 0.0  # Reset the timer
 	else:
 		print("Out of ammo!")  # Optional: Notify when out of ammo
