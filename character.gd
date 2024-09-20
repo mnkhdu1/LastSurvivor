@@ -12,7 +12,7 @@ const JUMP_VELOCITY = 3.0
 @onready var gun_barrel = $head/Camera3D/sawed_off_without_shell/RayCast3D
 @onready var sfx_shoot = $sfx_shot
 @onready var sfx_reload = $sfx_reload  # Assuming you have a reload sound effect
-
+signal player_hit
 # Sensitivity and movement variables
 var sensetivity = 0.003
 var t_bob = 0.0
@@ -31,6 +31,7 @@ var time_since_last_shot = 0.0  # Timer for managing shooting delay
 # Remove cursor
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 
 # Rotate camera
 func _unhandled_input(event):
@@ -38,6 +39,8 @@ func _unhandled_input(event):
 		head.rotate_y(-event.relative.x * sensetivity)
 		camera_3d.rotate_x(-event.relative.y * sensetivity)
 		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-45), deg_to_rad(60))
+		
+		
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -85,9 +88,11 @@ func shoot():
 
 		for i in range(pellet_count):
 			instance = bullet.instantiate()  # Instantiate a new bullet
-
+			
 			# Set the position of the bullet to the gun barrel
-			instance.position = gun_barrel.global_position
+			instance.position = gun_barrel.global_transform.origin
+			
+			
 			
 			# Get the direction of the gun barrel
 			var gun_direction = gun_barrel.global_transform.basis.z
@@ -106,7 +111,7 @@ func shoot():
 			
 			# Add the bullet to the scene
 			get_parent().add_child(instance)
-		
+			
 		bullet_count -= 1 # Decrease bullet count after shooting
 		time_since_last_shot = 0.0  # Reset the timer
 	else:
@@ -134,3 +139,7 @@ func head_bob(time):
 	pos.x = cos(time * bob_freq / 2) * bob_amp
 	
 	return pos
+func hit():
+	emit_signal("player_hit")
+	
+

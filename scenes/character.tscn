@@ -255,6 +255,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00424743, 0.00575495, -0.00
 mesh = SubResource("CapsuleMesh_ampoy")
 
 [node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.695081, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -0.391727, -0.592321)
@@ -277,8 +278,9 @@ transform = Transform3D(0.352765, 0.148688, -0.115968, -0.176658, 0.17457, -0.31
 visible = false
 
 [node name="RayCast3D" type="RayCast3D" parent="head/Camera3D/sawed_off_without_shell"]
-transform = Transform3D(0.00597661, -0.0108225, 0.999925, -0.99897, 0.0449256, 0.00645714, -0.0449921, -0.998933, -0.010543, 0.42814, 0.619167, -0.00180918)
+transform = Transform3D(0.00597661, -0.0108226, 0.999921, -0.998969, 0.0449256, 0.00645715, -0.044992, -0.998927, -0.010543, -3.44566, 2.58796, 0.214501)
 target_position = Vector3(0, 0, -2)
+collision_mask = 256
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_vvwj4")

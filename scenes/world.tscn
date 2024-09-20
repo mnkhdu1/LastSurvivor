@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8rnosfuo00rr"]
+[gd_scene load_steps=5 format=3 uid="uid://c8rnosfuo00rr"]
 
 [ext_resource type="PackedScene" uid="uid://csn2tyxj5vsgt" path="res://map.tscn" id="1_dupyt"]
+[ext_resource type="Script" path="res://scenes/world.gd" id="1_rhfbo"]
 [ext_resource type="PackedScene" uid="uid://86edlj0cxajg" path="res://scenes/character.tscn" id="1_sndx5"]
 
 [sub_resource type="Environment" id="Environment_k73yt"]
@@ -35,6 +36,7 @@ adjustment_saturation = 0.65
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.763308, -1.13718, -0.477658)
+script = ExtResource("1_rhfbo")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k73yt")
@@ -43,3 +45,18 @@ environment = SubResource("Environment_k73yt")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_sndx5")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -26.1613, -18.7552, 6.21428)
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="ui"]
+visible = false
+layout_mode = 0
+offset_right = 1161.0
+offset_bottom = 646.0
+color = Color(1, 0.490196, 0.447059, 1)
+
+[connection signal="player_hit" from="CharacterBody3D" to="." method="_on_character_body_3d_player_hit"]
