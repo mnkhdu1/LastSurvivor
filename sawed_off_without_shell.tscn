@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://0fn7n82e5qyk"]
+[gd_scene load_steps=2 format=3 uid="uid://rqmebc5deiki"]
 
 [ext_resource type="PackedScene" uid="uid://c1ocfr4hwco1c" path="res://assets/sawed_off_without_shell.glb" id="1_wacd5"]
 
@@ -15,5 +15,6 @@ transform = Transform3D(0.0183948, 0.999831, -3.57567e-07, 1.69407e-21, -3.57628
 transform = Transform3D(0.0183948, 0.999831, -3.57567e-07, 1.69407e-21, -3.57628e-07, -1, -0.999831, 0.0183947, -6.57847e-09, 0.143004, 0.0663151, 0.401777)
 
 [node name="RayCast3D" type="RayCast3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, -0.999931, -0.0117632, 0, 0.0117632, -0.999931, 0.151249, 0.686447, -1.9675)
+transform = Transform3D(1, 0, 0, 0, -0.999931, -0.0117632, 0, 0.0117632, -0.999931, 0.125093, 0.686447, 1.04667)
 target_position = Vector3(0, 0, -2)
+collision_mask = 257

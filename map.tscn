@@ -4862,6 +4862,15 @@ size = Vector3(75, 0.01, 75)
 [node name="zombie" parent="NavigationRegion3D" instance=ExtResource("26_5gptc")]
 transform = Transform3D(-0.4, 0, -6.03983e-08, 0, 0.4, 0, 6.03983e-08, 0, -0.4, -11.8743, 1.65625, 4.48749)
 
+[node name="zombie2" parent="NavigationRegion3D" instance=ExtResource("26_5gptc")]
+transform = Transform3D(-0.4, 0, -6.03983e-08, 0, 0.4, 0, 6.03983e-08, 0, -0.4, -11.8743, 1.65625, 8.46611)
+
+[node name="zombie3" parent="NavigationRegion3D" instance=ExtResource("26_5gptc")]
+transform = Transform3D(-0.4, 0, -6.03983e-08, 0, 0.4, 0, 6.03983e-08, 0, -0.4, -6.11956, 1.65625, 4.48749)
+
+[node name="zombie4" parent="NavigationRegion3D" instance=ExtResource("26_5gptc")]
+transform = Transform3D(-0.4, 0, -6.03983e-08, 0, 0.4, 0, 6.03983e-08, 0, -0.4, -14.7757, 1.65625, 4.48749)
+
 [node name="invisible_wall" parent="." instance=ExtResource("6_gcak4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5619, -17.8204, -9.67438)
 collision_layer = 73

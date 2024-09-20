@@ -10,7 +10,7 @@ var state_machine
 var player = null
 var health = 200
 @onready var navigation_agent_3d = $NavigationAgent3D
-var speed = 1
+var speed = 4
 
 func _ready():
 	player = get_parent().get_parent().get_parent().get_node("CharacterBody3D")
@@ -39,6 +39,10 @@ func _process(delta):
 	animation_tree.set("parameters/conditions/attack", target_in_range())
 	animation_tree.set("parameters/conditions/run", !target_in_range())
 	if health<=0:
+		animation_tree.set("root_motion_track",Vector3.ZERO)
+		animation_tree.set("parameters/conditions/die",true)
+		await get_tree().create_timer(4.0).timeout
+		
 		queue_free()
 
 func target_in_range():
