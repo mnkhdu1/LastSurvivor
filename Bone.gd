@@ -17,19 +17,20 @@ func _ready():
 	
 	match part_name:
 		0:
-			damage = 10
+			damage = 55
 		1:
-			damage = 3
+			damage = 30
 		2:
-			damage = 5
+			damage = 40
 		3:
-			damage = 15
+			damage = 75
 			
 
 
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("bullet"):
 		emit_signal("got_hit",self)
+		self.disable = true
 		body.queue_free()
 		
 func recieve_damage():

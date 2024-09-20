@@ -3,13 +3,13 @@ extends CharacterBody3D
 var bullet = load("res://bullet.tscn")
 var shell_scene = load("res://shell.tscn")  # Load the shell scene
 var instance
-var bullet_count: int = 2 # Starting bullets in the magazine
+var bullet_count: int = 200 # Starting bullets in the magazine
 var is_reloading: bool = false  # Track if the player is reloading
 
 const JUMP_VELOCITY = 3.0
 @onready var head = $head
 @onready var camera_3d = $head/Camera3D
-@onready var gun_barrel = $head/Camera3D/sawed_off_without_shell/RayCast3D
+@onready var gun_barrel = $head/Camera3D/gun/RayCast3D
 @onready var sfx_shoot = $sfx_shot
 @onready var sfx_reload = $sfx_reload  # Assuming you have a reload sound effect
 signal player_hit
@@ -23,7 +23,7 @@ const walk_speed = 2.0
 const sprint_speed = 3.0
 var speed = 0
 var damage = 20
-var spread = 10  # Degrees
+var spread = 5  # Degrees
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var shoot_delay = 0.4 # Time in seconds between shots
 var time_since_last_shot = 0.0  # Timer for managing shooting delay
@@ -80,7 +80,7 @@ func _physics_process(delta):
 
 func shoot():
 	if bullet_count > 0:  # Check if there are bullets to shoot
-		$head/Camera3D/sawed_off_without_shell/AnimationPlayer.play("shoot")
+		$head/Camera3D/gun/AnimationPlayer.play("shoot")
 		sfx_shoot.play()
 		
 		var pellet_count = 12  # Number of pellets for the shotgun
@@ -103,14 +103,14 @@ func shoot():
 			
 			# Calculate random direction for the bullet
 			var bullet_direction = gun_direction
-			bullet_direction = bullet_direction.rotated(Vector3(1, 0, 0), random_x)  # X-axis (up/down) spread
+			bullet_direction = bullet_direction.rotated(Vector3(0,1,0), random_x)  # X-axis (up/down) spread
 			bullet_direction = bullet_direction.rotated(Vector3(0, 1, 0), random_y)  # Y-axis (left/right) spread
 			
 			# Update the bullet's transform to use the new direction
 			instance.transform.basis = Basis().looking_at(bullet_direction, Vector3.UP).orthonormalized()
 			
 			# Add the bullet to the scene
-			get_parent().add_child(instance)
+			get_tree().root.add_child(instance)
 			
 		bullet_count -= 1 # Decrease bullet count after shooting
 		time_since_last_shot = 0.0  # Reset the timer
@@ -120,9 +120,9 @@ func shoot():
 func _reload():
 	if not is_reloading:
 		is_reloading = true
-		$head/Camera3D/sawed_off_without_shell/AnimationPlayer.play("reload")  # Play reload animation
+		$head/Camera3D/gun/AnimationPlayer.play("reload")  # Play reload animation
 		sfx_reload.play()  # Play reload sound
-		await $head/Camera3D/sawed_off_without_shell/AnimationPlayer.animation_finished  # Wait for animation to finish
+		#await $head/Camera3D/sawed_off_without_shell/AnimationPlayer.animation_finished  # Wait for animation to finish
 		
 		# Instantiate the shell scene
 		var shell_instance = shell_scene.instantiate()  # Create a new shell instance

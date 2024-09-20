@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxtupnq7oklww"]
+
+[ext_resource type="AudioStream" path="res://06. Metal Hell.ogg" id="1_2trim"]
+
+[node name="background music" type="AudioStreamPlayer"]
+stream = ExtResource("1_2trim")
+autoplay = true

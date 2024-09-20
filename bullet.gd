@@ -1,9 +1,7 @@
 extends CharacterBody3D
 
-const speed = 20
-
-
-const max_distance = 50.0  # Maximum distance before queue_free
+const speed = 40
+const max_distance = 500.0  # Maximum distance before queue_free
 
 var initial_position: Vector3
 

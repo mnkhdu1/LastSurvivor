@@ -8,7 +8,7 @@ const attack_range = 0.8
 @onready var zombie_attack = $zombie_moan
 var state_machine
 var player = null
-var health = 30
+var health = 200
 @onready var navigation_agent_3d = $NavigationAgent3D
 var speed = 1
 
