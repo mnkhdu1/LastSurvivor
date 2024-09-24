@@ -107,7 +107,7 @@ func shoot():
 			bullet_direction = bullet_direction.rotated(Vector3(0, 1, 0), random_y)  # Y-axis (left/right) spread
 			
 			# Update the bullet's transform to use the new direction
-			instance.transform.basis = Basis().looking_at(bullet_direction, Vector3.UP).orthonormalized()
+			instance.transform.basis = Basis.looking_at(bullet_direction, Vector3.UP).orthonormalized()
 			
 			# Add the bullet to the scene
 			get_tree().root.add_child(instance)

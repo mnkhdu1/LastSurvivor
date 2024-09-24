@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8rnosfuo00rr"]
+[gd_scene load_steps=6 format=3 uid="uid://c8rnosfuo00rr"]
 
 [ext_resource type="PackedScene" uid="uid://csn2tyxj5vsgt" path="res://map.tscn" id="1_dupyt"]
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_rhfbo"]
 [ext_resource type="PackedScene" uid="uid://86edlj0cxajg" path="res://scenes/character.tscn" id="1_sndx5"]
+[ext_resource type="AudioStream" uid="uid://chrq4a5fuakp5" path="res://zombie-roar.ogg" id="4_s7ixo"]
 
 [sub_resource type="Environment" id="Environment_k73yt"]
 ambient_light_energy = 1.15
@@ -58,5 +59,8 @@ layout_mode = 0
 offset_right = 1161.0
 offset_bottom = 646.0
 color = Color(1, 0.490196, 0.447059, 1)
+
+[node name="zombie_roar" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_s7ixo")
 
 [connection signal="player_hit" from="CharacterBody3D" to="." method="_on_character_body_3d_player_hit"]
