@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://86edlj0cxajg"]
+[gd_scene load_steps=12 format=3 uid="uid://86edlj0cxajg"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_omyan"]
 [ext_resource type="AudioStream" uid="uid://bfomuihqq5oor" path="res://assets/ogg sound effect/shotgun.ogg" id="3_fn6mh"]
 [ext_resource type="PackedScene" uid="uid://rqmebc5deiki" path="res://sawed_off_without_shell.tscn" id="4_6oubh"]
 [ext_resource type="AudioStream" uid="uid://dqqp0ownpbuqk" path="res://shotgun-fast-reload.ogg" id="5_4n5i7"]
+[ext_resource type="AudioStream" uid="uid://cdtt3onqyyxw7" path="res://empty-gun-shot-6209.ogg" id="5_5m06h"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ampoy"]
 
@@ -149,6 +150,22 @@ libraries = {
 "": SubResource("AnimationLibrary_3upai")
 }
 
+[node name="HUD" type="Control" parent="head/Camera3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BulletCountLabel" type="Label" parent="head/Camera3D/HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HealthBarIndicator" type="Label" parent="head/Camera3D/HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_vvwj4")
 
@@ -157,3 +174,6 @@ stream = ExtResource("3_fn6mh")
 
 [node name="sfx_reload" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_4n5i7")
+
+[node name="sfx_clicking" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_5m06h")
