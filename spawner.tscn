@@ -1,14 +1,3 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3yr2l3kldanr"]
-
-[ext_resource type="Script" path="res://Enemy_spawner.gd" id="1_eln3b"]
-[ext_resource type="PackedScene" uid="uid://c3vkf87d3vjec" path="res://scenes/zombie.tscn" id="2_fiegv"]
+[gd_scene format=3 uid="uid://d3yr2l3kldanr"]
 
 [node name="Spawner" type="Node3D"]
-script = ExtResource("1_eln3b")
-enemy_scene = ExtResource("2_fiegv")
-
-[node name="Spawner_Timer" type="Timer" parent="."]
-wait_time = 20.0
-autostart = true
-
-[connection signal="timeout" from="Spawner_Timer" to="." method="_on_Spawner_Timer_timeout"]

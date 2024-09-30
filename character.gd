@@ -5,8 +5,7 @@ var shell_scene = load("res://shell.tscn")  # Load the shell scene
 var instance
 var bullet_count: int = 2  # Starting bullets in the magazine
 var is_reloading: bool = false  # Track if the player is reloading
-@onready var bullet_count_label: Label = $head/Camera3D/HUD/BulletCountLabel  # Path to the HUD Label node
-@onready var health_label: Label =  $head/Camera3D/HUD/HealthBarIndicator # Health label in HUD
+
 var max_health: int = 100  # Maximum health of the player
 var current_health: int = max_health  # Player's current health
 
@@ -24,6 +23,8 @@ var t_bob = 0.0
 var bob_freq = 3
 var bob_amp = 0.1
 
+signal re_load
+
 const walk_speed = 2.0
 const sprint_speed = 4.0
 var speed = 0
@@ -36,8 +37,7 @@ var time_since_last_shot = 0.0  # Timer for managing shooting delay
 # Remove cursor
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	update_hud()
-	update_health()  # Update health label at start
+
 
 # Rotate camera
 func _unhandled_input(event):
@@ -79,11 +79,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func update_hud():
-	bullet_count_label.text = str(bullet_count)  # Update the Label text to show bullet count
-
-func update_health():
-	health_label.text = "Health: " + str(current_health)  # Update health label
 
 func shoot():
 	if bullet_count > 0:
@@ -95,19 +90,19 @@ func shoot():
 
 		if gun_barrel and gun_barrel.is_inside_tree():
 			for i in range(pellet_count):
-				var instance = bullet.instantiate()
-				instance.global_transform.origin = gun_barrel.global_transform.origin
+				instance = bullet.instantiate()
+				instance.position= gun_barrel.global_transform.origin
 				var gun_direction = gun_barrel.global_transform.basis.z
 				var random_x = randf_range(-spread_angle, spread_angle)
 				var random_y = randf_range(-spread_angle, spread_angle)
 				var bullet_direction = gun_direction
 				bullet_direction = bullet_direction.rotated(Vector3(1, 0, 0), random_x)
 				bullet_direction = bullet_direction.rotated(Vector3(0, 1, 0), random_y)
-				instance.transform.basis = Basis().looking_at(bullet_direction, Vector3.UP).orthonormalized()
+				instance.transform.basis = Basis.looking_at(bullet_direction, Vector3.UP).orthonormalized()
 				get_tree().root.add_child(instance)
 
 			bullet_count -= 1
-			update_hud()
+
 			time_since_last_shot = 0.0
 		else:
 			print("Gun barrel is not ready or not inside the scene tree.")
@@ -122,10 +117,10 @@ func _reload():
 		sfx_reload.play()
 		await $head/Camera3D/gun/AnimationPlayer.animation_finished
 		var shell_instance = shell_scene.instantiate()
-		shell_instance.global_transform.origin = gun_barrel.global_transform.origin
+		shell_instance.position= gun_barrel.global_transform.origin
 		get_parent().add_child(shell_instance)
 		bullet_count = 2
-		update_hud()
+
 		is_reloading = false
 
 func head_bob(time):
@@ -135,21 +130,23 @@ func head_bob(time):
 	return pos
 
 # Called when the player is hit
-func hit(damage: int):
-	current_health -= damage
+func hit(damage_taken):
+	emit_signal("player_hit")
+	current_health -= damage_taken
 	if current_health <= 0:
 		current_health = 0
 		die()
-	update_health()
+	
 
 # Function to handle player death and restart game
 func die():
 	print("Player is dead!")
+	
 	set_process_input(false)  # Disable player input to simulate death
-	#$head/Camera3D/gun/AnimationPlayer.play("death")  # Optional: play death animation
+
 	
 	# Wait for 1 second before restarting the game
 	await get_tree().create_timer(1.0).timeout
 	
-	get_tree().reload_current_scene()  # Reload the current scene to restart the game
-# Reload the current scene to restart the game
+	get_tree().reload_current_scene()
+
