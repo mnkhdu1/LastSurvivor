@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://rqmebc5deiki"]
+
+[ext_resource type="PackedScene" uid="uid://c1ocfr4hwco1c" path="res://assets/sawed_off_without_shell.glb" id="1_t3css"]
+[ext_resource type="Script" path="res://scipts/muzzle_flash.gd" id="2_476qv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1y6ux"]
+
+[node name="sawed_off_without_shell" instance=ExtResource("1_t3css")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+
+[node name="Body_002" parent="." index="0"]
+transform = Transform3D(0.0183948, 0.999831, -3.57567e-07, 1.69407e-21, -3.57628e-07, -1, -0.999831, 0.0183947, -6.57847e-09, 0.143004, 0.0663151, 0.401777)
+
+[node name="HandGaurd&Barrel_001" parent="." index="1"]
+transform = Transform3D(0.0183948, 0.999831, -3.57567e-07, 1.69407e-21, -3.57628e-07, -1, -0.999831, 0.0183947, -6.57847e-09, 0.143004, 0.0663151, 0.401777)
+
+[node name="Trigger&Trigger_001" parent="." index="2"]
+transform = Transform3D(0.0183948, 0.999831, -3.57567e-07, 1.69407e-21, -3.57628e-07, -1, -0.999831, 0.0183947, -6.57847e-09, 0.143004, 0.0663151, 0.401777)
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, -0.999931, -0.0117632, 0, 0.0117632, -0.999931, 0.125093, 0.686447, 1.04667)
+target_position = Vector3(0, 0, -2)
+collision_mask = 257
+
+[node name="muzzle_flash" type="Sprite3D" parent="." index="4"]
+script = ExtResource("2_476qv")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="muzzle_flash" index="0"]
+transform = Transform3D(0.937943, -0.346789, 1.69708e-07, 0.346778, 0.937914, 0.00790605, -0.00274189, -0.00741537, 0.999969, 0.521513, 0.63852, -0.242941)
+light_color = Color(0.901111, 0.884822, 7.70092e-07, 1)
+light_energy = 5.421
+light_indirect_energy = 9.96
+light_volumetric_fog_energy = 2.73
+light_size = 30.21
+light_specular = 1.78
+light_bake_mode = 0
+shadow_enabled = true
+spot_range = 5.92307
+spot_angle = 28.0108
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="muzzle_flash" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155014, 0.683561, -0.0745641)
+visibility_range_begin = 50.0
+visibility_range_begin_margin = 30.0
+visibility_range_fade_mode = 2
+lifetime = 0.4
+explosiveness = 0.04
+randomness = 0.01
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_1y6ux")

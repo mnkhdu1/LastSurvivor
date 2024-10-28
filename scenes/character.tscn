@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://86edlj0cxajg"]
 
-[ext_resource type="Script" path="res://character.gd" id="1_omyan"]
+[ext_resource type="Script" path="res://scipts/character.gd" id="1_omyan"]
 [ext_resource type="AudioStream" uid="uid://bfomuihqq5oor" path="res://assets/ogg sound effect/shotgun.ogg" id="3_fn6mh"]
-[ext_resource type="PackedScene" uid="uid://rqmebc5deiki" path="res://sawed_off_without_shell.tscn" id="4_6oubh"]
+[ext_resource type="PackedScene" uid="uid://rqmebc5deiki" path="res://scenes/sawed_off_without_shell.tscn" id="4_6oubh"]
 [ext_resource type="AudioStream" uid="uid://dqqp0ownpbuqk" path="res://shotgun-fast-reload.ogg" id="5_4n5i7"]
 [ext_resource type="AudioStream" uid="uid://cdtt3onqyyxw7" path="res://empty-gun-shot-6209.ogg" id="5_5m06h"]
 
@@ -136,7 +136,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00424743, 0.00575495, -0.00
 mesh = SubResource("CapsuleMesh_ampoy")
 
 [node name="head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180181, 0.882419, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0157962, 0.882419, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -0.391727, -0.592321)
@@ -149,6 +149,19 @@ transform = Transform3D(0.394209, 0, 0.0678156, 0, 0.4, 0, -0.0678156, 0, 0.3942
 libraries = {
 "": SubResource("AnimationLibrary_3upai")
 }
+
+[node name="OmniLight3D" type="SpotLight3D" parent="head"]
+transform = Transform3D(2.34486, -0.866972, 4.25078e-07, 0.866945, 2.34478, 0.0197651, -0.00685473, -0.0185384, 2.49992, 0.322768, 0.919105, -0.701738)
+light_color = Color(0.901111, 0.884822, 7.70092e-07, 1)
+light_energy = 5.421
+light_indirect_energy = 9.96
+light_volumetric_fog_energy = 2.73
+light_size = 30.21
+light_specular = 1.78
+light_bake_mode = 0
+shadow_enabled = true
+spot_range = 5.92307
+spot_angle = 28.0108
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_vvwj4")

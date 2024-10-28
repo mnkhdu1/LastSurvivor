@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8rnosfuo00rr"]
+[gd_scene load_steps=9 format=3 uid="uid://c8rnosfuo00rr"]
 
-[ext_resource type="PackedScene" uid="uid://csn2tyxj5vsgt" path="res://map.tscn" id="1_dupyt"]
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_rhfbo"]
+[ext_resource type="PackedScene" uid="uid://csn2tyxj5vsgt" path="res://scenes/map.tscn" id="1_dupyt"]
 [ext_resource type="PackedScene" uid="uid://86edlj0cxajg" path="res://scenes/character.tscn" id="1_sndx5"]
-[ext_resource type="Texture2D" uid="uid://bse6td3w16c3c" path="res://scenes/noun-shotgun-shell-250248.png" id="4_gia2r"]
-[ext_resource type="Texture2D" uid="uid://ppuhu48cprlh" path="res://scenes/noun-medical-cross-6833767.png" id="5_caeua"]
+[ext_resource type="Texture2D" uid="uid://ppuhu48cprlh" path="res://scenes/noun-medical-cross-6833767.png" id="3_i4bq2"]
+[ext_resource type="Texture2D" uid="uid://bse6td3w16c3c" path="res://scenes/noun-shotgun-shell-250248.png" id="4_0owey"]
 
 [sub_resource type="Environment" id="Environment_k73yt"]
 ambient_light_energy = 1.15
@@ -20,37 +19,36 @@ glow_strength = 0.27
 glow_bloom = 0.07
 glow_blend_mode = 1
 fog_enabled = true
+fog_light_color = Color(0.438936, 0.473024, 0.5266, 1)
+fog_density = 0.1
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.6978
+volumetric_fog_density = 0.3
 volumetric_fog_albedo = Color(0, 0, 0, 1)
-volumetric_fog_emission = Color(0.450648, 0.450648, 0.450648, 1)
-volumetric_fog_gi_inject = 1.22
-volumetric_fog_anisotropy = -0.9
+volumetric_fog_emission = Color(0.454524, 0.454524, 0.454524, 1)
+volumetric_fog_emission_energy = 0.2
 volumetric_fog_detail_spread = 6.0
 volumetric_fog_ambient_inject = 1.22
-volumetric_fog_sky_affect = 0.489
+volumetric_fog_sky_affect = 0.406
 volumetric_fog_temporal_reprojection_amount = 0.885
 adjustment_enabled = true
-adjustment_brightness = 0.71
 adjustment_saturation = 0.65
 
 [sub_resource type="FontVariation" id="FontVariation_smbd5"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_rjd57"]
+[sub_resource type="LabelSettings" id="LabelSettings_u0eig"]
 font = SubResource("FontVariation_smbd5")
 font_size = 52
 font_color = Color(0.0687983, 0.0687983, 0.0687983, 1)
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ph06q"]
+[sub_resource type="LabelSettings" id="LabelSettings_mqc4y"]
 font_size = 55
 outline_size = 28
 outline_color = Color(0.125911, 0.125911, 0.125911, 1)
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.763308, -1.13718, -0.477658)
-script = ExtResource("1_rhfbo")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k73yt")
@@ -58,51 +56,24 @@ environment = SubResource("Environment_k73yt")
 [node name="map" parent="." instance=ExtResource("1_dupyt")]
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_sndx5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -26.1613, -18.7552, 6.21428)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -26.1613, -18.1511, 3.64995)
 
-[node name="HUD" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_left = 0.414
+anchor_top = 0.76
+anchor_right = 0.461
+anchor_bottom = 0.789
+offset_left = -792.88
+offset_top = -817.8
+offset_right = -883.12
+offset_bottom = -835.12
+size_flags_horizontal = 4
+size_flags_vertical = 6
 
-[node name="ammo_1" type="TextureRect" parent="HUD"]
-layout_mode = 0
-offset_left = 628.0
-offset_top = 892.0
-offset_right = 695.0
-offset_bottom = 992.0
-texture = ExtResource("4_gia2r")
-expand_mode = 1
-
-[node name="ammo_2" type="TextureRect" parent="HUD"]
-layout_mode = 0
-offset_left = 701.0
-offset_top = 892.0
-offset_right = 768.0
-offset_bottom = 992.0
-texture = ExtResource("4_gia2r")
-expand_mode = 1
-
-[node name="Health" type="TextureRect" parent="HUD"]
-layout_mode = 0
-offset_left = 402.0
-offset_top = 898.0
-offset_right = 518.0
-offset_bottom = 1010.0
-texture = ExtResource("5_caeua")
-expand_mode = 1
-
-[node name="health_bar" type="Label" parent="HUD"]
-layout_mode = 0
-offset_left = 519.0
-offset_top = 912.0
-offset_right = 622.0
-offset_bottom = 1020.0
-text = "100"
-label_settings = SubResource("LabelSettings_rjd57")
-
-[node name="ColorRect" type="ColorRect" parent="HUD"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/HUD"]
 visible = false
 layout_mode = 0
 offset_left = -131.0
@@ -112,7 +83,7 @@ offset_bottom = 200.0
 rotation = -0.680988
 color = Color(1, 0.0352941, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="HUD"]
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/HUD"]
 visible = false
 layout_mode = 0
 offset_left = 93.0
@@ -122,7 +93,7 @@ offset_bottom = 1414.0
 rotation = -2.5542
 color = Color(1, 0.0352941, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="HUD"]
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/HUD"]
 visible = false
 layout_mode = 0
 offset_left = 2058.0
@@ -132,7 +103,7 @@ offset_bottom = 1283.0
 rotation = -3.6575
 color = Color(1, 0.0352941, 0, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="HUD"]
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/HUD"]
 visible = false
 layout_mode = 0
 offset_left = 1772.0
@@ -142,23 +113,69 @@ offset_bottom = 19.0
 rotation = -5.87763
 color = Color(1, 0.0352941, 0, 1)
 
-[node name="current_wave" type="Label" parent="HUD"]
-layout_mode = 0
-offset_left = 1035.0
-offset_top = 76.0
-offset_right = 1373.0
-offset_bottom = 170.0
-label_settings = SubResource("LabelSettings_ph06q")
-clip_text = true
+[node name="health_bar" type="Label" parent="CanvasLayer/HUD"]
+layout_mode = 2
+offset_left = 104.43
+offset_top = 808.843
+offset_right = 206.43
+offset_bottom = 880.843
+size_flags_horizontal = 3
+text = "100"
+label_settings = SubResource("LabelSettings_u0eig")
+metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="HUD"]
-layout_mode = 0
-offset_left = 869.0
-offset_top = 78.0
-offset_right = 1036.0
-offset_bottom = 172.0
+[node name="Health" type="TextureRect" parent="CanvasLayer/HUD"]
+layout_mode = 2
+offset_left = 210.43
+offset_top = 760.843
+offset_right = 312.43
+offset_bottom = 929.843
+size_flags_horizontal = 3
+texture = ExtResource("3_i4bq2")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/HUD"]
+layout_mode = 2
+offset_left = 941.065
+offset_top = 129.34
+offset_right = 1094.06
+offset_bottom = 205.34
 text = "wave"
-label_settings = SubResource("LabelSettings_ph06q")
+label_settings = SubResource("LabelSettings_mqc4y")
 uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="current_wave" type="Label" parent="CanvasLayer/HUD"]
+layout_mode = 2
+offset_left = 1098.06
+offset_top = 129.34
+offset_right = 1250.06
+offset_bottom = 205.34
+size_flags_horizontal = 3
+label_settings = SubResource("LabelSettings_mqc4y")
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ammo_2" type="TextureRect" parent="CanvasLayer/HUD"]
+layout_mode = 2
+offset_left = 503.835
+offset_top = 750.373
+offset_right = 553.835
+offset_bottom = 878.373
+size_flags_horizontal = 3
+texture = ExtResource("4_0owey")
+expand_mode = 1
+
+[node name="ammo_1" type="TextureRect" parent="CanvasLayer/HUD"]
+layout_mode = 2
+offset_left = 557.835
+offset_top = 750.373
+offset_right = 608.835
+offset_bottom = 878.373
+size_flags_horizontal = 3
+texture = ExtResource("4_0owey")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="player_hit" from="CharacterBody3D" to="." method="_on_character_body_3d_player_hit"]

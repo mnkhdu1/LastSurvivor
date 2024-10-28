@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1q6rdw3535cb"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_awbmq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -6.0
+offset_right = 2.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_awbmq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 266.0
+offset_top = 82.0
+offset_right = 378.0
+offset_bottom = 162.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 15
+size_flags_stretch_ratio = 0.64
+text = "sound"
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "mute"
+
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "resolution
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 87.0
+offset_right = 617.0
+offset_bottom = 167.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1154x864"
+popup/item_1/id = 1
+popup/item_2/text = "1024x768"
+popup/item_2/id = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 210.0
+offset_right = 484.0
+offset_bottom = 250.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 7
+
+[node name="Button" type="Button" parent="HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "back
+"
+
+[connection signal="value_changed" from="HBoxContainer2/VBoxContainer2/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="HBoxContainer2/VBoxContainer2/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="HBoxContainer2/VBoxContainer2/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="button_up" from="HBoxContainer3/VBoxContainer/Button" to="." method="_on_button_button_up"]
