@@ -46,10 +46,10 @@ text = "resolution
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 459.0
-offset_top = 87.0
-offset_right = 617.0
-offset_bottom = 167.0
+offset_left = 357.0
+offset_top = 84.0
+offset_right = 515.0
+offset_bottom = 164.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer2"]
 layout_mode = 2
@@ -67,10 +67,9 @@ size_flags_stretch_ratio = 0.0
 
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer2/VBoxContainer2"]
 layout_mode = 2
-item_count = 3
 selected = 0
+item_count = 3
 popup/item_0/text = "1920x1080"
-popup/item_0/id = 0
 popup/item_1/text = "1154x864"
 popup/item_1/id = 1
 popup/item_2/text = "1024x768"
@@ -78,10 +77,10 @@ popup/item_2/id = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 399.0
-offset_top = 210.0
-offset_right = 484.0
-offset_bottom = 250.0
+offset_left = 362.0
+offset_top = 195.0
+offset_right = 447.0
+offset_bottom = 235.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer3"]
 layout_mode = 2

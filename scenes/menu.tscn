@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqnqqu4dhi4v7"]
+[gd_scene load_steps=6 format=3 uid="uid://bqnqqu4dhi4v7"]
 
 [ext_resource type="Script" path="res://scipts/menu.gd" id="1_ytala"]
+[ext_resource type="Texture2D" uid="uid://ceo5d2xs086dc" path="res://last_survivor_menu_ui.jpg" id="2_yjqle"]
+[ext_resource type="Texture2D" uid="uid://dd3yluxvpxi2m" path="res://play.button.jpg" id="3_uyj28"]
+[ext_resource type="Texture2D" uid="uid://up72g303gagd" path="res://button.options.jpg" id="4_i318q"]
+[ext_resource type="Texture2D" uid="uid://bhu6cnlfhtg5c" path="res://exit.button.jpg" id="5_6fuly"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -11,25 +15,61 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ytala")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_yjqle")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 846.0
+offset_top = 537.0
+offset_right = 916.0
+offset_bottom = 638.0
+scale = Vector2(3.2, 3.44)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Play"
+text = "1"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/play"]
+layout_mode = 0
+offset_left = 3.125
+offset_top = 2.90697
+offset_right = 68.125
+offset_bottom = 29.907
+scale = Vector2(0.0930245, 0.056157)
+texture = ExtResource("3_uyj28")
 
 [node name="options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Options"
+text = "2"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/options"]
+layout_mode = 0
+offset_left = 3.4375
+offset_top = 2.20928
+offset_right = 687.438
+offset_bottom = 475.209
+scale = Vector2(0.0922876, 0.0545369)
+texture = ExtResource("4_i318q")
 
 [node name="exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Exit"
+text = "3"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/exit"]
+layout_mode = 0
+offset_left = 3.4375
+offset_top = 2.67437
+offset_right = 43.4375
+offset_bottom = 42.6744
+scale = Vector2(0.0953721, 0.0631304)
+texture = ExtResource("5_6fuly")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options" to="." method="_on_options_pressed"]

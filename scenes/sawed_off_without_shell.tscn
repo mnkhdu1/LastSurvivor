@@ -7,6 +7,7 @@
 
 [node name="sawed_off_without_shell" instance=ExtResource("1_t3css")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+visible = false
 
 [node name="Body_002" parent="." index="0"]
 transform = Transform3D(0.0183948, 0.999831, -3.57567e-07, 1.69407e-21, -3.57628e-07, -1, -0.999831, 0.0183947, -6.57847e-09, 0.143004, 0.0663151, 0.401777)
