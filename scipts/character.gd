@@ -47,8 +47,7 @@ func _unhandled_input(event):
 		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-45), deg_to_rad(60))
 
 func _physics_process(delta):
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	
 	if is_on_floor():
 		if Input.is_action_pressed("sprint"):
 			speed = sprint_speed

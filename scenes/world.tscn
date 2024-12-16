@@ -59,8 +59,10 @@ environment = SubResource("Environment_k73yt")
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -26.1613, -18.1511, 3.64995)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HUD" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchor_left = 0.414
 anchor_top = 0.76
@@ -84,7 +86,6 @@ rotation = -0.680988
 color = Color(1, 0.0352941, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer/HUD"]
-visible = false
 layout_mode = 0
 offset_left = 93.0
 offset_top = 1227.0
